@@ -23,6 +23,6 @@ function readFiles(files, number, content) {
     return content
 }
 
-var files = getFiles('.')
+var files = getFiles('.') 
 var content = readFiles(files, 38)
 console.log(content)
