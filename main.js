@@ -1,4 +1,10 @@
 var fs = require('fs');
+
+
+
+
+
+
 function getFiles(dir, fileList) {
     fileList = fileList || [];
 
@@ -23,6 +29,18 @@ function readFiles(files, number, content) {
     return content
 }
 
-var files = getFiles('.') 
+var files = getFiles('.')
 var content = readFiles(files, 38)
 console.log(content)
+
+
+
+var http = require('http');
+
+var app = require('express')();
+
+app.listen(3000);
+app.get('/', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(content));
+});
